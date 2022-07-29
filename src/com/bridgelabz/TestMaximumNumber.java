@@ -1,10 +1,6 @@
 package com.bridgelabz;
 
 public class TestMaximumNumber {
-        public static void main(String[] args)
-        {
-            printMaxValue(maximumInteger(50, 200, 100));
-        }
 
         public static int maximumInteger(Integer x, Integer y, Integer z)
         {
@@ -19,7 +15,28 @@ public class TestMaximumNumber {
             }
             return maxValue;
         }
-        private static void printMaxValue(Integer maxValue) {
-            System.out.println(" Maximum number is : " + maxValue);
+
+        public static double maximumFloat(Double x, Double y, Double z)
+        {
+            Double maxValueFloat = x;
+            if (y.compareTo(maxValueFloat) > 0)
+            {
+                maxValueFloat = y;
+            }
+            if (z.compareTo(maxValueFloat) > 0)
+            {
+                maxValueFloat = z;
+            }
+            return maxValueFloat;
         }
-}
+        private static void printMaxValue(double maxValueFloat)
+        {
+            System.out.println(" Maximum number is : " + maxValueFloat);
+        }
+       
+        public static void main(String[] args)
+        {
+            printMaxValue(maximumInteger(100,200 , 700));
+            printMaxValue(maximumFloat(2.1, 1.1, 3.5));
+        }
+    }
