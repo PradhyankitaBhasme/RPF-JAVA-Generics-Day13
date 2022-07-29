@@ -2,41 +2,61 @@ package com.bridgelabz;
 
 public class TestMaximumNumber {
 
-        public static int maximumInteger(Integer x, Integer y, Integer z)
+    public static int maximumInteger(Integer x, Integer y, Integer z)
+    {
+        Integer maxValue = x;
+        if (y.compareTo(maxValue) > 0)
         {
-            Integer maxValue = x;
-            if (y.compareTo(maxValue) > 0)
-            {
-                maxValue = y;
-            }
-            if (z.compareTo(maxValue) > 0)
-            {
-                maxValue = z;
-            }
-            return maxValue;
+            maxValue = y;
         }
-
-        public static double maximumFloat(Double x, Double y, Double z)
+        if (z.compareTo(maxValue) > 0)
         {
-            Double maxValueFloat = x;
-            if (y.compareTo(maxValueFloat) > 0)
-            {
-                maxValueFloat = y;
-            }
-            if (z.compareTo(maxValueFloat) > 0)
-            {
-                maxValueFloat = z;
-            }
-            return maxValueFloat;
+            maxValue = z;
         }
-        private static void printMaxValue(double maxValueFloat)
-        {
-            System.out.println(" Maximum number is : " + maxValueFloat);
-        }
-       
-        public static void main(String[] args)
-        {
-            printMaxValue(maximumInteger(100,200 , 700));
-            printMaxValue(maximumFloat(2.1, 1.1, 3.5));
-        }
+        return maxValue;
     }
+
+    public static double maximumFloat(Double x, Double y, Double z)
+    {
+        Double maxValueFloat = x;
+        if (y.compareTo(maxValueFloat) > 0)
+        {
+            maxValueFloat = y;
+        }
+        if (z.compareTo(maxValueFloat) > 0)
+        {
+            maxValueFloat = z;
+        }
+        return maxValueFloat;
+    }
+    public static String maximumString(String first, String second, String third)
+    {
+        int maxValueString = first.length();
+        String letter = first;
+        if (second.length() > maxValueString)
+        {
+            maxValueString = second.length();
+            letter = second;
+        }
+        if (third.length() > maxValueString) {
+            maxValueString = third.length();
+            letter = third;
+        }
+        return letter;
+    }
+    private static void printMaxValue(double maxValueFloat)
+    {
+        System.out.println(" Maximum number is : " + maxValueFloat);
+    }
+    private static void printMaxValue(String maxValueString)
+    {
+        System.out.println(" Maximum String is : " + maxValueString);
+    }
+
+    public static void main(String[] args)
+    {
+        printMaxValue(maximumInteger(100,200 , 700));
+        printMaxValue(maximumFloat(2.1, 1.1, 3.5));
+        printMaxValue(maximumString("apple","elephant","cat"));
+    }
+}
